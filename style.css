@@ -1,0 +1,183 @@
+:root{
+  --Desaturated-Red: hsl(0, 36%, 70%);
+  --Soft-Red: hsl(0, 93%, 68%);
+  --Dark-Grayish-Red: hsl(0, 6%, 24%);
+  --gradient-1: linear-gradient(135deg, hsl(0, 0%, 100%), hsl(0, 100%, 98%));
+  --gradient-2: linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%));
+  --font-fam: 'Josefin Sans', sans-serif;
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+}
+
+body{
+  background: url('images/bg-pattern-desktop.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-family: var(--font-fam);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+/* --------- Page position -------- */
+.box{
+  display: grid;
+  grid-template-columns: auto 3fr;
+  grid-template-rows: minmax(180px, auto);
+  grid-template-areas: 
+  "logo   image"
+  "detail image";
+}
+
+/* --------- Page Logo -------- */
+.logo-placement{
+  margin: 50px 0px 0px 150px;
+  grid-area: logo;
+}
+
+/* --------- Page desktop Image -------- */
+.image{
+  grid-area: image;
+}
+
+/* --------- Page header and contents -------- */
+.package{
+  grid-area: detail;
+  margin: 0px 100px 0 150px;
+}
+.header{
+  font-size: 5.5em;
+  font-weight: 900;
+  color: var(--Dark-Grayish-Red);
+}
+.header span{
+  font-weight:  lighter;
+  color: var(--Desaturated-Red);
+}
+
+.description{
+  margin-top: 20px;
+  color: var(--Desaturated-Red);
+  line-height: 25px;
+  width: 420px;
+}
+
+/* --------- Page Email form -------- */
+.form-int{
+  position: relative;
+  width: 400px;
+}
+#email{
+  padding: 10px 50px 10px 20px;
+  border-radius: 30px;
+  border: 1px solid var(--Desaturated-Red);
+  background-color: transparent;
+  width: 350px;
+  margin-top: 20px;
+}
+#email::placeholder, #email:focus{
+  color: var(--Desaturated-Red);
+  outline: none;
+}
+
+/* --------- Page error icon and error message -------- */
+.exclamation{
+  position: absolute;
+  top: 45%;
+  left: 67%;
+  display: none;
+}
+.error-msg{
+  margin: 15px 0px 0px 20px;
+  color: var(--Soft-Red);
+  display: none;
+}
+
+/* --------- Page submit button -------- */
+#submit{
+  padding: 8px 30px;
+  background:var(--Desaturated-Red);
+  position: absolute;
+  border: none;
+  border-radius: 30px;
+  transform: translate(-50px, 19px);
+  box-shadow: 0px 30px 100px var(--Dark-Grayish-Red);
+  cursor: pointer;
+}
+#submit:hover{
+  background: var(--gradient-2);
+  box-shadow: 0px 30px 80px var(--Dark-Grayish-Red);
+}
+#submit:focus{
+  outline: none;
+}
+
+
+/* ======= Mobile Version ======= */
+
+@media (max-width: 375px){
+  body{
+    overflow: scroll;
+  }
+  .container{
+    max-width: 375px;
+  }
+  /* -------- Logo placement --------- */
+  .logo-placement{
+    margin: 20px 25px;
+    max-height: 50px;
+  }
+
+  /* -------- change page's position --------- */
+  .box{
+    width: 375px;
+    grid-template-columns: auto;
+    grid-template-rows: minmax(100px, auto);
+    grid-template-areas: 
+    "logo"
+    "image"
+    "detail";
+  }
+
+  /* -------- Switch Desktop img to mobile version --------- */
+  .picture{
+    display: none;
+  }
+  .image{
+    background: url('images/hero-mobile.jpg');
+    height: 300px;
+    background-repeat: no-repeat;
+  }
+
+  /* -------- Heading contents --------- */
+  .package{
+    margin: 0 auto;
+    text-align: center;
+  }
+  .header{
+    font-size: 3em;
+    max-width: 230px;
+    margin: 0 auto;
+  }
+
+  /* -------- Descriptions and email addresses --------- */
+  .description{
+    max-width: 330px;
+    margin: 20px auto;
+  }
+
+  #email{
+    padding: 13px 60px 13px 20px;
+    margin-bottom: 100px;
+    width: 300px;
+  }
+  #submit{
+    padding: 11px 25px;
+    transform: translate(-55px, 19px);
+  }
+}
