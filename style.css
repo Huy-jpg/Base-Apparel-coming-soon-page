@@ -185,11 +185,21 @@ body{
 
   #email{
     padding: 13px 60px 13px 20px;
-    margin-bottom: 100px;
+    margin-bottom: 20px;
     width: 300px;
   }
   #submit{
     padding: 11px 25px;
     transform: translate(-55px, 19px);
+  }
+
+  /* ---------- Error Message and Icon */
+  .exclamation{
+    top: 25%;
+    left: 67%;
+  }
+  .error-msg{
+    color: var(--Soft-Red);
+    display: block;
   }
 }
