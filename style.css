@@ -200,6 +200,5 @@ body{
   }
   .error-msg{
     color: var(--Soft-Red);
-    display: block;
   }
 }
